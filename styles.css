@@ -98,6 +98,42 @@ button {
     text-align: center;
 }
 
+/* Mobile Menu */
+.nav-mobile-toggle {
+    display: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: var(--bg);
+    z-index: 1000;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s var(--ease-out);
+}
+
+.mobile-menu.open {
+    opacity: 1; pointer-events: all;
+}
+
+.mobile-menu-close {
+    position: absolute; top: 6vw; right: 5vw;
+    font-family: var(--font-body); font-size: 0.85rem; letter-spacing: 0.05em;
+    cursor: pointer; font-weight: 600; text-transform: uppercase;
+}
+
+.mobile-menu-links {
+    display: flex; flex-direction: column; gap: 8vw; text-align: center;
+}
+
+.mobile-link {
+    font-family: var(--font-heading); font-size: 14vw; font-weight: 700;
+    text-transform: uppercase; color: var(--text);
+}
+
 /* Navigation */
 .nav {
     position: fixed;
@@ -518,65 +554,54 @@ button {
 
 /* Responsive */
 @media (max-width: 768px) {
-
-    .grid-2,
-    .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 10vw;
-    }
-
-    .hero-title {
-        font-size: 15vw;
-    }
-
-    .hero-sub {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
-        font-size: 12vw;
-    }
-
-    .mega-title {
-        font-size: 15vw;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8vw;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .custom-cursor {
-        display: none;
-    }
-
-    html,
-    body,
-    a,
-    button {
-        cursor: auto;
-    }
-
-    .price-tier {
-        padding: 8vw 6vw;
-    }
+    /* Navigation */
+    .nav { padding: 6vw 5vw; }
+    .nav-right { display: none; }
+    .nav-mobile-toggle { display: block; }
+    
+    /* Layout */
+    .section { padding: 25vw 0; }
+    .grid-2, .pricing-grid { grid-template-columns: 1fr; gap: 15vw; }
+    
+    /* Hero */
+    .hero { padding: 0 5vw; justify-content: center; }
+    .hero-title { font-size: 16vw; margin-bottom: 4vh; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 3rem; margin-top: 0; }
+    .hero-sub { font-size: 1.15rem; max-width: 100%; }
+    .scroll-indicator { align-items: flex-start; }
+    
+    /* Typography */
+    .section-title { font-size: 14vw; margin-bottom: 2rem; }
+    .mega-title { font-size: 18vw; margin-bottom: 1rem; }
+    .marquee-content { font-size: 8vw; }
+    
+    /* Services */
+    .services-list { gap: 10vw; }
+    .service-item h3 { font-size: 1.35rem; }
+    .service-item p { font-size: 1.1rem; max-width: 100%; }
+    
+    /* Pricing */
+    .price-tier { padding: 10vw 8vw; }
+    .tier-top { align-items: center; }
+    .tier-top .price { font-size: 2.5rem; }
+    
+    /* Forms */
+    .input-group input, .input-group textarea { font-size: 1rem; padding: 1.2rem 0; }
+    .submit-btn { width: 100%; padding: 1.2rem; text-align: center; }
+    
+    /* Footer */
+    .footer-main { margin-top: 15vw; }
+    .footer-grid { grid-template-columns: 1fr; gap: 12vw; }
+    .footer-col h4 { font-size: 1rem; margin-bottom: 1rem; }
+    .footer-col a { font-size: 1.1rem; margin-bottom: 1rem; }
+    .footer-bottom { flex-direction: column; gap: 2rem; align-items: flex-start; text-align: left; padding: 8vw 0; margin-top: 10vw; }
+    
+    /* Disable Custom Cursor */
+    .custom-cursor { display: none; } 
+    html, body, a, button { cursor: auto; }
 }
 
 @media (max-width: 480px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 8vw;
-        text-align: center;
-    }
-
-    .footer-brand p {
-        max-width: 100%;
-        margin: 0 auto;
-    }
+    .hero-title { font-size: 18vw; }
+    .mega-title { font-size: 20vw; }
 }
