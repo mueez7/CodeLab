@@ -7,18 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileToggle && mobileClose && mobileMenu) {
         mobileToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
             document.body.style.overflow = 'hidden';
         });
 
         mobileClose.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
+            mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
             document.body.style.overflow = '';
         });
 
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
                 document.body.style.overflow = '';
             });
         });

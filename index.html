@@ -9,188 +9,222 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgdark: '#030303',
+                        bordergray: '#222222',
+                        textmuted: '#888888',
+                    },
+                    fontFamily: {
+                        heading: ['Syne', 'sans-serif'],
+                        body: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-bgdark text-white font-body overflow-x-hidden antialiased selection:bg-white selection:text-bgdark cursor-none">
+    
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
 
-    <!-- Minimalist Navigation -->
-    <nav class="nav">
-        <div class="nav-left">CODE LAB &copy; 2026</div>
-        <div class="nav-right">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full px-6 md:px-12 py-4 md:py-6 flex justify-between items-center z-50 mix-blend-difference text-sm tracking-wide font-medium backdrop-blur-sm bg-black/30 md:bg-transparent md:backdrop-blur-none">
+        <div class="uppercase">CODE LAB &copy; 2026</div>
+        
+        <!-- Desktop Links -->
+        <div class="hidden md:flex gap-12">
             <a href="#services" class="nav-link">SERVICES</a>
             <a href="#pricing" class="nav-link">ENGAGEMENT</a>
             <a href="#contact" class="nav-link">CONTACT</a>
         </div>
-        <div class="nav-mobile-toggle" id="mobileToggle">MENU</div>
+        
+        <!-- Mobile Hamburger Icon -->
+        <button id="mobileToggle" class="md:hidden block focus:outline-none z-50 p-2">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
     </nav>
 
     <!-- Fullscreen Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-close" id="mobileClose">CLOSE</div>
-        <div class="mobile-menu-links">
-            <a href="#services" class="mobile-link">SERVICES</a>
-            <a href="#pricing" class="mobile-link">ENGAGEMENT</a>
-            <a href="#contact" class="mobile-link">CONTACT</a>
+    <div id="mobileMenu" class="fixed inset-0 bg-bgdark z-[100] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <button id="mobileClose" class="absolute top-6 right-6 p-2 focus:outline-none">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="flex flex-col gap-10 text-center">
+            <a href="#services" class="mobile-link font-heading text-4xl font-bold uppercase hover:text-gray-300 transition-colors">SERVICES</a>
+            <a href="#pricing" class="mobile-link font-heading text-4xl font-bold uppercase hover:text-gray-300 transition-colors">ENGAGEMENT</a>
+            <a href="#contact" class="mobile-link font-heading text-4xl font-bold uppercase hover:text-gray-300 transition-colors">CONTACT</a>
         </div>
     </div>
 
-    <!-- Editorial Hero Section -->
-    <header class="hero">
-        <div class="hero-wrapper">
-            <h1 class="hero-title trigger-reveal">
-                <div class="reveal-mask"><span class="reveal-text delay-0">WE MAKE</span></div>
-                <div class="reveal-mask"><span class="reveal-text delay-1">PROJECTS.</span></div>
-            </h1>
-            <div class="hero-bottom">
-                <p class="hero-sub trigger-fade delay-1">From basic landing pages to advanced full-stack applications, we build exactly what you need with an award-winning aesthetic.</p>
-                <div class="scroll-indicator trigger-fade delay-2">
-                    <span>SCROLL</span>
-                    <div class="line"></div>
+    <!-- Hero Section -->
+    <header class="h-screen flex flex-col justify-center px-6 md:px-12 pt-20 md:pt-0">
+        <h1 class="font-heading font-extrabold uppercase leading-[0.85] tracking-tight text-5xl sm:text-6xl md:text-[9vw] mb-8 md:mb-12 trigger-reveal break-words">
+            <div class="reveal-mask"><span class="reveal-text delay-0 block">WE MAKE</span></div>
+            <div class="reveal-mask"><span class="reveal-text delay-1 block">PROJECTS.</span></div>
+        </h1>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 md:gap-0">
+            <p class="text-lg md:text-2xl text-textmuted max-w-md trigger-fade delay-1">
+                From basic landing pages to advanced full-stack applications, we build exactly what you need with an award-winning aesthetic.
+            </p>
+            <div class="flex flex-col items-center gap-4 text-xs tracking-widest uppercase trigger-fade delay-2 mt-4 md:mt-0">
+                <span>SCROLL</span>
+                <div class="w-[1px] h-20 bg-white/30 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-white w-full h-full animate-scroll-line"></div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Infinite Marquee -->
-    <div class="marquee border-top border-bottom">
-        <div class="marquee-content">
+    <div class="py-6 md:py-8 border-y border-bordergray overflow-hidden flex whitespace-nowrap">
+        <div class="font-heading font-semibold text-3xl md:text-[5vw] tracking-wide animate-marquee">
             FULL-STACK DEVELOPMENT &nbsp; &mdash; &nbsp; UI/UX DESIGN &nbsp; &mdash; &nbsp; E-COMMERCE &nbsp; &mdash; &nbsp; WEBGL &nbsp; &mdash; &nbsp; STRATEGY &nbsp; &mdash; &nbsp; FULL-STACK DEVELOPMENT &nbsp; &mdash; &nbsp; UI/UX DESIGN &nbsp; &mdash; &nbsp; E-COMMERCE &nbsp; &mdash; &nbsp; WEBGL &nbsp; &mdash; &nbsp; STRATEGY &nbsp; &mdash; &nbsp;
         </div>
     </div>
 
-    <!-- Services / Expertise -->
-    <section id="services" class="section services-sec">
-        <div class="container grid-2">
-            <div class="section-title-wrap">
-                <h2 class="section-title trigger-reveal">
-                    <div class="reveal-mask"><span class="reveal-text delay-0">OUR</span></div>
-                    <div class="reveal-mask"><span class="reveal-text delay-1">EXPERTISE.</span></div>
+    <!-- Services -->
+    <section id="services" class="py-24 md:py-32 px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+            <div>
+                <h2 class="font-heading font-bold text-5xl md:text-[6vw] leading-[0.9] tracking-tight trigger-reveal break-words">
+                    <div class="reveal-mask"><span class="reveal-text delay-0 block">OUR</span></div>
+                    <div class="reveal-mask"><span class="reveal-text delay-1 block">EXPERTISE.</span></div>
                 </h2>
             </div>
-            <div class="services-list">
-                <div class="service-item trigger-fade">
-                    <h3>01 / DEVELOPMENT</h3>
-                    <p>Blazing fast, scalable architectures built with modern stacks. We craft code that performs flawlessly under pressure.</p>
+            <div class="flex flex-col gap-12 md:gap-16">
+                <div class="trigger-fade">
+                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">01 / DEVELOPMENT</h3>
+                    <p class="text-textmuted text-lg md:text-xl">Blazing fast, scalable architectures built with modern stacks. We craft code that performs flawlessly under pressure.</p>
                 </div>
-                <div class="service-item trigger-fade delay-1">
-                    <h3>02 / EXPERIENCE DESIGN</h3>
-                    <p>Immersive, award-winning interfaces. We bridge the gap between aesthetic brilliance and cognitive ease.</p>
+                <div class="trigger-fade delay-1">
+                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">02 / EXPERIENCE DESIGN</h3>
+                    <p class="text-textmuted text-lg md:text-xl">Immersive, award-winning interfaces. We bridge the gap between aesthetic brilliance and cognitive ease.</p>
                 </div>
-                <div class="service-item trigger-fade delay-2">
-                    <h3>03 / DIGITAL STRATEGY</h3>
-                    <p>Data-driven insights to position your brand for market dominance. We build products that scale.</p>
+                <div class="trigger-fade delay-2">
+                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">03 / DIGITAL STRATEGY</h3>
+                    <p class="text-textmuted text-lg md:text-xl">Data-driven insights to position your brand for market dominance. We build products that scale.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing / Engagement Models -->
-    <section id="pricing" class="section border-top">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 6vw;">
-                <h2 class="section-title trigger-reveal" style="display: inline-block; text-align: center;">
-                    <div class="reveal-mask"><span class="reveal-text delay-0">ENGAGEMENT</span></div>
-                    <div class="reveal-mask"><span class="reveal-text delay-1">MODELS.</span></div>
-                </h2>
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 md:py-32 px-6 md:px-12 border-t border-bordergray">
+        <div class="text-left md:text-center mb-16 md:mb-24">
+            <h2 class="font-heading font-bold text-5xl md:text-[6vw] leading-[0.9] tracking-tight inline-block trigger-reveal break-words">
+                <div class="reveal-mask"><span class="reveal-text delay-0 block md:inline">ENGAGEMENT</span></div>
+                <div class="reveal-mask"><span class="reveal-text delay-1 block md:inline">MODELS.</span></div>
+            </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+            <div class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade">
+                <div class="flex justify-between items-end mb-8">
+                    <h4 class="text-sm tracking-widest text-textmuted">BASIC</h4>
+                    <span class="font-heading font-bold text-4xl md:text-5xl leading-[0.9]">₹1000</span>
+                </div>
+                <p class="text-[#cccccc] mb-10 leading-relaxed">Static landing pages and simple portfolios.</p>
+                <hr class="border-bordergray mb-10">
+                <ul class="space-y-4 text-textmuted text-sm">
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Custom Design System</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Responsive Web Build</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Core Animations</li>
+                </ul>
             </div>
-            <div class="pricing-grid">
-                <div class="price-tier trigger-fade">
-                    <div class="tier-top">
-                        <h4>BASIC</h4>
-                        <span class="price">₹1000</span>
-                    </div>
-                    <p>Static landing pages and simple portfolios.</p>
-                    <hr>
-                    <ul>
-                        <li>Custom Design System</li>
-                        <li>Responsive Web Build</li>
-                        <li>Core Animations</li>
-                    </ul>
+            
+            <div class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade delay-1">
+                <div class="flex justify-between items-end mb-8">
+                    <h4 class="text-sm tracking-widest text-textmuted">ADVANCE</h4>
+                    <span class="font-heading font-bold text-4xl md:text-5xl leading-[0.9]">₹1500</span>
                 </div>
-                <div class="price-tier trigger-fade delay-1">
-                    <div class="tier-top">
-                        <h4>ADVANCE</h4>
-                        <span class="price">₹1500</span>
-                    </div>
-                    <p>Multi-page websites with dynamic content integration.</p>
-                    <hr>
-                    <ul>
-                        <li>Immersive Interactions</li>
-                        <li>CMS Architecture</li>
-                        <li>Advanced Performance Specs</li>
-                    </ul>
+                <p class="text-[#cccccc] mb-10 leading-relaxed">Multi-page websites with dynamic content integration.</p>
+                <hr class="border-bordergray mb-10">
+                <ul class="space-y-4 text-textmuted text-sm">
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Immersive Interactions</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>CMS Architecture</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Advanced Performance Specs</li>
+                </ul>
+            </div>
+
+            <div class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade delay-2">
+                <div class="flex justify-between items-end mb-8">
+                    <h4 class="text-sm tracking-widest text-textmuted">FULLSTACK</h4>
+                    <span class="font-heading font-bold text-4xl md:text-5xl leading-[0.9]">₹2500</span>
                 </div>
-                <div class="price-tier trigger-fade delay-2">
-                    <div class="tier-top">
-                        <h4>FULLSTACK</h4>
-                        <span class="price">₹2500</span>
-                    </div>
-                    <p>Complete web applications with robust backends.</p>
-                    <hr>
-                    <ul>
-                        <li>Full-Stack Application Build</li>
-                        <li>Custom Database Infrastructure</li>
-                        <li>API Integrations</li>
-                    </ul>
-                </div>
+                <p class="text-[#cccccc] mb-10 leading-relaxed">Complete web applications with robust backends.</p>
+                <hr class="border-bordergray mb-10">
+                <ul class="space-y-4 text-textmuted text-sm">
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Full-Stack Build</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Custom Database</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>API Integrations</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Contact & Footer -->
-    <section id="contact" class="section footer-sec border-top" style="padding-bottom: 0;">
-        <div class="container grid-2">
+    <section id="contact" class="pt-24 md:pt-32 border-t border-bordergray">
+        <div class="px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-20 md:mb-32">
             <div>
-                <h2 class="mega-title trigger-reveal">
-                    <div class="reveal-mask"><span class="reveal-text delay-0">LET'S</span></div>
-                    <div class="reveal-mask"><span class="reveal-text delay-1">TALK.</span></div>
+                <h2 class="font-heading font-extrabold text-6xl md:text-[9vw] leading-[0.85] tracking-tight trigger-reveal break-words">
+                    <div class="reveal-mask"><span class="reveal-text delay-0 block">LET'S</span></div>
+                    <div class="reveal-mask"><span class="reveal-text delay-1 block">TALK.</span></div>
                 </h2>
             </div>
-            <div class="contact-form-wrap trigger-fade delay-1">
-                <form class="minimal-form" id="contactForm">
-                    <div class="input-group">
-                        <input type="text" placeholder="NAME / COMPANY" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" placeholder="EMAIL ADDRESS" required>
-                    </div>
-                    <div class="input-group">
-                        <textarea rows="4" placeholder="PROJECT DETAILS" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">INITIATE REQUEST &rarr;</button>
+            <div class="trigger-fade delay-1">
+                <form id="contactForm" class="flex flex-col gap-8">
+                    <input type="text" placeholder="NAME / COMPANY" required class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none">
+                    <input type="email" placeholder="EMAIL ADDRESS" required class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none">
+                    <textarea rows="4" placeholder="PROJECT DETAILS" required class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none"></textarea>
+                    <button type="submit" class="self-start mt-4 px-10 py-4 border border-white rounded-full text-sm font-medium tracking-widest uppercase hover:bg-white hover:text-bgdark transition-colors duration-300 w-full md:w-auto">
+                        INITIATE REQUEST &rarr;
+                    </button>
                 </form>
             </div>
         </div>
-        <div class="footer-main container trigger-fade delay-2">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>CODE LAB</h3>
-                    <p>Architecting the digital future. One line of code at a time.</p>
+
+        <div class="px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 trigger-fade delay-2">
+                <div class="md:col-span-2">
+                    <h3 class="font-heading text-2xl mb-4">CODE LAB</h3>
+                    <p class="text-textmuted text-sm md:text-base max-w-sm">Architecting the digital future. One line of code at a time.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>NAVIGATION</h4>
-                    <a href="#services">Services</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#contact">Contact</a>
+                <div>
+                    <h4 class="text-textmuted text-xs tracking-widest mb-6">NAVIGATION</h4>
+                    <div class="flex flex-col gap-3 text-sm">
+                        <a href="#services" class="hover:text-textmuted transition-colors">Services</a>
+                        <a href="#pricing" class="hover:text-textmuted transition-colors">Pricing</a>
+                        <a href="#contact" class="hover:text-textmuted transition-colors">Contact</a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>SOCIALS</h4>
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Instagram</a>
-                </div>
-                <div class="footer-col">
-                    <h4>LEGAL</h4>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                <div>
+                    <h4 class="text-textmuted text-xs tracking-widest mb-6">SOCIALS</h4>
+                    <div class="flex flex-col gap-3 text-sm">
+                        <a href="#" class="hover:text-textmuted transition-colors">Twitter</a>
+                        <a href="#" class="hover:text-textmuted transition-colors">LinkedIn</a>
+                        <a href="#" class="hover:text-textmuted transition-colors">Instagram</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom container trigger-fade delay-3">
-            <div>&copy; 2026 CODE LAB. ALL RIGHTS RESERVED.</div>
-            <div>BASED IN THE DIGITAL REALM</div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-16 py-8 border-t border-bordergray text-xs text-textmuted tracking-widest uppercase trigger-fade delay-3 gap-4 md:gap-0">
+                <div>&copy; 2026 CODE LAB. ALL RIGHTS RESERVED.</div>
+                <div>BASED IN THE DIGITAL REALM</div>
+            </div>
         </div>
     </section>
 
