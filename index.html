@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,10 @@
     <!-- Premium Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -29,79 +32,100 @@
             }
         }
     </script>
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-bgdark text-white font-body overflow-x-hidden antialiased selection:bg-white selection:text-bgdark cursor-none">
-    
+
+<body
+    class="bg-bgdark text-white font-body overflow-x-hidden antialiased selection:bg-white selection:text-bgdark cursor-none">
+
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full px-5 md:px-12 py-4 md:py-6 flex justify-between items-center z-50 text-sm tracking-wide font-medium backdrop-blur-md bg-black/40 border-b border-white/10 shadow-lg transition-all duration-300">
+    <nav
+        class="fixed top-0 left-0 w-full px-5 md:px-12 py-4 md:py-6 flex justify-between items-center z-50 text-sm tracking-wide font-medium backdrop-blur-md bg-black/40 border-b border-white/10 shadow-lg transition-all duration-300">
         <div class="uppercase">CODE LAB &copy; 2026</div>
-        
+
         <!-- Desktop Links -->
         <div class="hidden md:flex gap-12">
             <a href="#services" class="nav-link">SERVICES</a>
             <a href="#pricing" class="nav-link">ENGAGEMENT</a>
             <a href="#contact" class="nav-link">CONTACT</a>
         </div>
-        
+
         <!-- Mobile Hamburger Icon -->
         <button id="mobileToggle" class="md:hidden block focus:outline-none z-50 p-2">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16">
+                </path>
             </svg>
         </button>
     </nav>
 
     <!-- Fullscreen Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-0 bg-bgdark z-[100] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-bgdark z-[100] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
         <button id="mobileClose" class="absolute top-6 right-6 p-2 focus:outline-none">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M6 18L18 6M6 6l12 12">
+                </path>
             </svg>
         </button>
         <div class="flex flex-col gap-8 text-center">
-            <a href="#services" class="mobile-link font-heading text-3xl font-bold uppercase hover:text-gray-300 transition-colors">SERVICES</a>
-            <a href="#pricing" class="mobile-link font-heading text-3xl font-bold uppercase hover:text-gray-300 transition-colors">ENGAGEMENT</a>
-            <a href="#contact" class="mobile-link font-heading text-3xl font-bold uppercase hover:text-gray-300 transition-colors">CONTACT</a>
+            <a href="#services"
+                class="mobile-link font-heading text-3xl font-bold uppercase hover:text-gray-300 transition-colors">SERVICES</a>
+            <a href="#pricing"
+                class="mobile-link font-heading text-3xl font-bold uppercase hover:text-gray-300 transition-colors">ENGAGEMENT</a>
+            <a href="#contact"
+                class="mobile-link font-heading text-3xl font-bold uppercase hover:text-gray-300 transition-colors">CONTACT</a>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <header class="h-screen flex flex-col justify-start md:justify-center px-5 md:px-12 pt-[22vh] md:pt-0 relative overflow-hidden">
-        
+    <header
+        class="h-screen flex flex-col justify-start md:justify-center px-5 md:px-12 pt-[22vh] md:pt-0 relative overflow-hidden">
+
         <!-- Minimalist Background Star Graphic -->
-        <div class="absolute -bottom-20 -right-20 md:top-1/2 md:-translate-y-1/2 md:right-0 w-[80vw] h-[80vw] md:w-[45vw] md:h-[45vw] opacity-[0.04] pointer-events-none animate-[spin_40s_linear_infinite] z-0">
+        <div
+            class="absolute -bottom-20 -right-20 md:top-1/2 md:-translate-y-1/2 md:right-0 w-[80vw] h-[80vw] md:w-[45vw] md:h-[45vw] opacity-[0.04] pointer-events-none animate-[spin_40s_linear_infinite] z-0">
             <svg viewBox="0 0 100 100" fill="currentColor" class="w-full h-full text-white">
                 <path d="M50 0 C50 35 65 50 100 50 C65 50 50 65 50 100 C50 65 35 50 0 50 C35 50 50 35 50 0 Z"></path>
             </svg>
         </div>
 
         <div class="relative z-10">
-            <h1 class="font-heading font-extrabold uppercase leading-[0.85] tracking-tight text-5xl md:text-[9vw] mb-8 md:mb-12 trigger-reveal break-words">
+            <h1
+                class="font-heading font-extrabold uppercase leading-[0.85] tracking-tight text-5xl md:text-[9vw] mb-8 md:mb-12 trigger-reveal break-words">
                 <div class="reveal-mask"><span class="reveal-text delay-0 block">WE MAKE</span></div>
                 <div class="reveal-mask"><span class="reveal-text delay-1 block">PROJECTS.</span></div>
             </h1>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 md:gap-0">
                 <div class="flex flex-col gap-8 md:gap-10 trigger-fade delay-1">
                     <p class="text-lg md:text-2xl text-textmuted max-w-md">
-                        From basic landing pages to advanced full-stack applications, we build exactly what you need with an award-winning aesthetic.
+                        From basic landing pages to advanced full-stack applications, we build exactly what you need
+                        with an award-winning aesthetic.
                     </p>
                     <div>
-                        <a href="#contact" class="inline-flex items-center justify-center gap-4 px-8 py-4 md:px-10 md:py-5 bg-white text-bgdark rounded-full font-heading font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:bg-transparent hover:text-white border border-white transition-all duration-300 group overflow-hidden relative w-fit">
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center gap-4 px-8 py-4 md:px-10 md:py-5 bg-white text-bgdark rounded-full font-heading font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:bg-transparent hover:text-white border border-white transition-all duration-300 group overflow-hidden relative w-fit">
                             <span class="relative z-10">START A PROJECT</span>
-                            <div class="absolute inset-0 bg-white/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 z-0"></div>
-                            <svg class="w-4 h-4 md:w-5 md:h-5 relative z-10 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            <div
+                                class="absolute inset-0 bg-white/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 z-0">
+                            </div>
+                            <svg class="w-4 h-4 md:w-5 md:h-5 relative z-10 transform group-hover:translate-x-2 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
                         </a>
                     </div>
                 </div>
-                <div class="hidden md:flex flex-col items-center gap-4 text-xs tracking-widest uppercase trigger-fade delay-2 mt-4 md:mt-0">
+                <div
+                    class="hidden md:flex flex-col items-center gap-4 text-xs tracking-widest uppercase trigger-fade delay-2 mt-4 md:mt-0">
                     <span>SCROLL</span>
                     <div class="w-[1px] h-20 bg-white/30 relative overflow-hidden">
                         <div class="absolute inset-0 bg-white w-full h-full animate-scroll-line"></div>
@@ -114,7 +138,10 @@
     <!-- Infinite Marquee -->
     <div class="py-6 md:py-8 border-y border-bordergray overflow-hidden flex whitespace-nowrap">
         <div class="font-heading font-semibold text-3xl md:text-[5vw] tracking-wide animate-marquee">
-            FULL-STACK DEVELOPMENT &nbsp; &mdash; &nbsp; UI/UX DESIGN &nbsp; &mdash; &nbsp; E-COMMERCE &nbsp; &mdash; &nbsp; WEBGL &nbsp; &mdash; &nbsp; STRATEGY &nbsp; &mdash; &nbsp; FULL-STACK DEVELOPMENT &nbsp; &mdash; &nbsp; UI/UX DESIGN &nbsp; &mdash; &nbsp; E-COMMERCE &nbsp; &mdash; &nbsp; WEBGL &nbsp; &mdash; &nbsp; STRATEGY &nbsp; &mdash; &nbsp;
+            FULL-STACK DEVELOPMENT &nbsp; &mdash; &nbsp; UI/UX DESIGN &nbsp; &mdash; &nbsp; E-COMMERCE &nbsp; &mdash;
+            &nbsp; WEBGL &nbsp; &mdash; &nbsp; STRATEGY &nbsp; &mdash; &nbsp; FULL-STACK DEVELOPMENT &nbsp; &mdash;
+            &nbsp; UI/UX DESIGN &nbsp; &mdash; &nbsp; E-COMMERCE &nbsp; &mdash; &nbsp; WEBGL &nbsp; &mdash; &nbsp;
+            STRATEGY &nbsp; &mdash; &nbsp;
         </div>
     </div>
 
@@ -122,23 +149,30 @@
     <section id="services" class="py-24 md:py-32 px-6 md:px-12">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
             <div>
-                <h2 class="font-heading font-bold text-4xl md:text-[6vw] leading-[0.9] tracking-tight trigger-reveal break-words">
+                <h2
+                    class="font-heading font-bold text-4xl md:text-[6vw] leading-[0.9] tracking-tight trigger-reveal break-words">
                     <div class="reveal-mask"><span class="reveal-text delay-0 block">OUR</span></div>
                     <div class="reveal-mask"><span class="reveal-text delay-1 block">EXPERTISE.</span></div>
                 </h2>
             </div>
             <div class="flex flex-col gap-12 md:gap-16">
                 <div class="trigger-fade">
-                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">01 / DEVELOPMENT</h3>
-                    <p class="text-textmuted text-lg md:text-xl">Blazing fast, scalable architectures built with modern stacks. We craft code that performs flawlessly under pressure.</p>
+                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">01 / DEVELOPMENT
+                    </h3>
+                    <p class="text-textmuted text-lg md:text-xl">Blazing fast, scalable architectures built with modern
+                        stacks. We craft code that performs flawlessly under pressure.</p>
                 </div>
                 <div class="trigger-fade delay-1">
-                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">02 / EXPERIENCE DESIGN</h3>
-                    <p class="text-textmuted text-lg md:text-xl">Immersive, award-winning interfaces. We bridge the gap between aesthetic brilliance and cognitive ease.</p>
+                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">02 / EXPERIENCE
+                        DESIGN</h3>
+                    <p class="text-textmuted text-lg md:text-xl">Immersive, award-winning interfaces. We bridge the gap
+                        between aesthetic brilliance and cognitive ease.</p>
                 </div>
                 <div class="trigger-fade delay-2">
-                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">03 / DIGITAL STRATEGY</h3>
-                    <p class="text-textmuted text-lg md:text-xl">Data-driven insights to position your brand for market dominance. We build products that scale.</p>
+                    <h3 class="font-heading text-xl border-b border-bordergray pb-4 mb-6 tracking-wide">03 / DIGITAL
+                        STRATEGY</h3>
+                    <p class="text-textmuted text-lg md:text-xl">Data-driven insights to position your brand for market
+                        dominance. We build products that scale.</p>
                 </div>
             </div>
         </div>
@@ -147,13 +181,15 @@
     <!-- Pricing -->
     <section id="pricing" class="py-24 md:py-32 px-6 md:px-12 border-t border-bordergray">
         <div class="text-left md:text-center mb-16 md:mb-24">
-            <h2 class="font-heading font-bold text-4xl md:text-[6vw] leading-[0.9] tracking-tight inline-block trigger-reveal break-words">
+            <h2
+                class="font-heading font-bold text-4xl md:text-[6vw] leading-[0.9] tracking-tight inline-block trigger-reveal break-words">
                 <div class="reveal-mask"><span class="reveal-text delay-0 block md:inline">ENGAGEMENT</span></div>
                 <div class="reveal-mask"><span class="reveal-text delay-1 block md:inline">MODELS.</span></div>
             </h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-            <div class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade">
+            <div
+                class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade">
                 <div class="flex justify-between items-end mb-8">
                     <h4 class="text-sm tracking-widest text-textmuted">BASIC</h4>
                     <span class="font-heading font-bold text-4xl md:text-5xl leading-[0.9]">₹1000</span>
@@ -161,27 +197,36 @@
                 <p class="text-[#cccccc] mb-10 leading-relaxed">Static landing pages and simple portfolios.</p>
                 <hr class="border-bordergray mb-10">
                 <ul class="space-y-4 text-textmuted text-sm">
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Custom Design System</li>
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Responsive Web Build</li>
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Core Animations</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Custom Design
+                        System</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Responsive
+                        Web Build</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Core
+                        Animations</li>
                 </ul>
             </div>
-            
-            <div class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade delay-1">
+
+            <div
+                class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade delay-1">
                 <div class="flex justify-between items-end mb-8">
                     <h4 class="text-sm tracking-widest text-textmuted">ADVANCE</h4>
                     <span class="font-heading font-bold text-4xl md:text-5xl leading-[0.9]">₹1500</span>
                 </div>
-                <p class="text-[#cccccc] mb-10 leading-relaxed">Multi-page websites with dynamic content integration.</p>
+                <p class="text-[#cccccc] mb-10 leading-relaxed">Multi-page websites with dynamic content integration.
+                </p>
                 <hr class="border-bordergray mb-10">
                 <ul class="space-y-4 text-textmuted text-sm">
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Immersive Interactions</li>
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>CMS Architecture</li>
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Advanced Performance Specs</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Immersive
+                        Interactions</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>CMS
+                        Architecture</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Advanced
+                        Performance Specs</li>
                 </ul>
             </div>
 
-            <div class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade delay-2">
+            <div
+                class="border border-bordergray p-8 md:p-10 hover:bg-[#0a0a0a] hover:border-[#444] transition-colors duration-300 trigger-fade delay-2">
                 <div class="flex justify-between items-end mb-8">
                     <h4 class="text-sm tracking-widest text-textmuted">FULLSTACK</h4>
                     <span class="font-heading font-bold text-4xl md:text-5xl leading-[0.9]">₹2500</span>
@@ -189,9 +234,12 @@
                 <p class="text-[#cccccc] mb-10 leading-relaxed">Complete web applications with robust backends.</p>
                 <hr class="border-bordergray mb-10">
                 <ul class="space-y-4 text-textmuted text-sm">
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Full-Stack Build</li>
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Custom Database</li>
-                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>API Integrations</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Full-Stack
+                        Build</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>Custom
+                        Database</li>
+                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-white rounded-full"></span>API
+                        Integrations</li>
                 </ul>
             </div>
         </div>
@@ -201,22 +249,34 @@
     <section id="contact" class="pt-24 md:pt-32 border-t border-bordergray">
         <div class="px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-20 md:mb-32">
             <div>
-                <h2 class="font-heading font-extrabold text-6xl md:text-[9vw] leading-[0.85] tracking-tight trigger-reveal break-words">
+                <h2
+                    class="font-heading font-extrabold text-6xl md:text-[9vw] leading-[0.85] tracking-tight trigger-reveal break-words">
                     <div class="reveal-mask"><span class="reveal-text delay-0 block">LET'S</span></div>
                     <div class="reveal-mask"><span class="reveal-text delay-1 block">TALK.</span></div>
                 </h2>
                 <div class="mt-12 md:mt-16 flex flex-col gap-6 trigger-fade delay-2">
                     <p class="text-textmuted text-sm tracking-widest uppercase">Direct Inquiries</p>
                     <div class="flex flex-col gap-5">
-                        <a href="https://wa.me/917411396919" target="_blank" class="inline-flex items-center gap-4 text-lg md:text-xl font-medium text-gray-300 hover:text-white transition-colors group">
-                            <div class="w-10 h-10 rounded-full border border-bordergray flex items-center justify-center group-hover:border-white group-hover:bg-white group-hover:text-bgdark transition-all duration-300">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        <a href="https://wa.me/917411396919" target="_blank"
+                            class="inline-flex items-center gap-4 text-lg md:text-xl font-medium text-gray-300 hover:text-white transition-colors group">
+                            <div
+                                class="w-10 h-10 rounded-full border border-bordergray flex items-center justify-center group-hover:border-white group-hover:bg-white group-hover:text-bgdark transition-all duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                                </svg>
                             </div>
-                            +91 7411 396 919
+                            +91 7483 426 975
                         </a>
-                        <a href="mailto:hello@codelab.example.com" class="inline-flex items-center gap-4 text-lg md:text-xl font-medium text-gray-300 hover:text-white transition-colors group">
-                            <div class="w-10 h-10 rounded-full border border-bordergray flex items-center justify-center group-hover:border-white group-hover:bg-white group-hover:text-bgdark transition-all duration-300">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="mailto:hello@codelab.example.com"
+                            class="inline-flex items-center gap-4 text-lg md:text-xl font-medium text-gray-300 hover:text-white transition-colors group">
+                            <div
+                                class="w-10 h-10 rounded-full border border-bordergray flex items-center justify-center group-hover:border-white group-hover:bg-white group-hover:text-bgdark transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
                             </div>
                             hello@codelab.example.com
                         </a>
@@ -225,10 +285,14 @@
             </div>
             <div class="trigger-fade delay-1">
                 <form id="contactForm" class="flex flex-col gap-8">
-                    <input type="text" placeholder="NAME / COMPANY" required class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none">
-                    <input type="email" placeholder="EMAIL ADDRESS" required class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none">
-                    <textarea rows="4" placeholder="PROJECT DETAILS" required class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none"></textarea>
-                    <button type="submit" class="self-start mt-4 px-10 py-4 border border-white rounded-full text-sm font-medium tracking-widest uppercase hover:bg-white hover:text-bgdark transition-colors duration-300 w-full md:w-auto">
+                    <input type="text" placeholder="NAME / COMPANY" required
+                        class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none">
+                    <input type="email" placeholder="EMAIL ADDRESS" required
+                        class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none">
+                    <textarea rows="4" placeholder="PROJECT DETAILS" required
+                        class="w-full bg-transparent border-b border-bordergray py-4 text-white text-lg focus:outline-none focus:border-white transition-colors placeholder:text-[#555] placeholder:text-sm placeholder:tracking-wider placeholder:uppercase rounded-none"></textarea>
+                    <button type="submit"
+                        class="self-start mt-4 px-10 py-4 border border-white rounded-full text-sm font-medium tracking-widest uppercase hover:bg-white hover:text-bgdark transition-colors duration-300 w-full md:w-auto">
                         INITIATE REQUEST &rarr;
                     </button>
                 </form>
@@ -239,7 +303,8 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 trigger-fade delay-2">
                 <div class="md:col-span-2">
                     <h3 class="font-heading text-2xl mb-4">CODE LAB</h3>
-                    <p class="text-textmuted text-sm md:text-base max-w-sm">Architecting the digital future. One line of code at a time.</p>
+                    <p class="text-textmuted text-sm md:text-base max-w-sm">Architecting the digital future. One line of
+                        code at a time.</p>
                 </div>
                 <div>
                     <h4 class="text-textmuted text-xs tracking-widest mb-6">NAVIGATION</h4>
@@ -258,8 +323,9 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-16 py-8 border-t border-bordergray text-xs text-textmuted tracking-widest uppercase trigger-fade delay-3 gap-4 md:gap-0">
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center mt-16 py-8 border-t border-bordergray text-xs text-textmuted tracking-widest uppercase trigger-fade delay-3 gap-4 md:gap-0">
                 <div>&copy; 2026 CODE LAB. ALL RIGHTS RESERVED.</div>
                 <div>BASED IN THE DIGITAL REALM</div>
             </div>
@@ -268,4 +334,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
